@@ -9,3 +9,5 @@ It uses custom IP addresses specific to my deployment. Dashboard uses a distribu
 
 The mr.sh script is specific to access points. It doesn't test connectivity for MX (SD-WAN/UTM security appliances) or MS (switches).
 
+## Documentation
+[Here is](https://documentation.meraki.com/General_Administration/Other_Topics/Upstream_Firewall_Rules_for_Cloud_Connectivity) the official documentation.
