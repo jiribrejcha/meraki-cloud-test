@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Get the default gateway IP address
-GATEWAY_IP=$(ip route | grep "default" | awk '{print $3}')
-ETH0_UP=$(/sbin/ethtool eth0 2> /dev/null | grep 'Link detected'| awk '{print $3}')
-MY_IP=$(ip address show eth0 | grep 'inet ' | awk '{print $2}' | awk -F'/' '{print $1}')
+GATEWAY_IP=$(ip route | awk '/default/ {print $3}')
+ETH0_UP=$(/sbin/ethtool eth0 2>/dev/null | awk '/Link detected/ {print $3}')
+MY_IP=$(ip -4 addr show eth0 | awk '/inet / {print $2}' | cut -d'/' -f1)
 
 ## Cloud connectivity tests:
 
